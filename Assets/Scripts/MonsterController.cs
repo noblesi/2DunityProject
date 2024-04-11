@@ -14,35 +14,50 @@ public class MonsterController : MonoBehaviour
 
     public bool isLive = true;
 
+    WaitForFixedUpdate wait;
+
     public RuntimeAnimatorController[] animCon;
-    [SerializeField] private Transform target;
+    private Rigidbody2D target;
     private SpriteRenderer spriteRenderer;
-    Animator animator;
+    private Rigidbody2D rigid;
+    private Animator animator;
+    private Collider2D col;
 
     private void Awake()
     {   
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
+
+        wait = new WaitForFixedUpdate();
     }
 
     private void FixedUpdate()
     {
-        if (!isLive) return;
+        if (!isLive || animator.GetCurrentAnimatorStateInfo(0).IsName("Hit")) return;
 
-        float dirVector = Vector3.Distance(transform.position, target.position);
-        
-        if (dirVector <= 10)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
-        }
+        Vector2 dirVector = target.position - rigid.position; 
+        Vector2 nextVector = dirVector.normalized * speed * Time.fixedDeltaTime;
+        rigid.MovePosition(rigid.position + nextVector);
+        rigid.velocity = Vector2.zero;
+    }
+
+    private void LateUpdate()
+    {
+        if (!isLive) return;
 
         spriteRenderer.flipX = target.position.x < transform.position.x;
     }
 
     private void OnEnable()
     {
-        target = GameManager.Instance.controller.transform;
+        target = GameManager.Instance.controller.GetComponent<Rigidbody2D>();
         isLive = true;
+        col.enabled = true;
+        rigid.simulated = true;
+        spriteRenderer.sortingOrder = 2;
+        animator.SetBool("Dead", false);
         curHp = maxHp;
     }
 
@@ -56,18 +71,34 @@ public class MonsterController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Bullet")) return;
+        if (!collision.CompareTag("Bullet") || !isLive) return;
 
         curHp -= collision.GetComponent<Bullet>().damage;
+        StartCoroutine(KnockBack());
 
         if(curHp > 0)
         {
-
+            animator.SetTrigger("Hit");
         }
         else
         {
-            Die();
+            isLive = false;
+            col.enabled = false;
+            rigid.simulated = false;
+            spriteRenderer.sortingOrder = 1;
+            animator.SetBool("Dead", true);
+            GameManager.Instance.kill++;
+            GameManager.Instance.GetExp();
         }
+    }
+
+    IEnumerator KnockBack()
+    {
+        yield return wait;
+        Vector3 playerPos = GameManager.Instance.controller.transform.position;
+        Vector3 dirVector = transform.position - playerPos;
+        rigid.AddForce(dirVector.normalized * 3f, ForceMode2D.Impulse);
+
     }
 
     void Die()

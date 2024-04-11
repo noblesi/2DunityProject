@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 2601847428194130359}
   - component: {fileID: -6989195373771556695}
   m_Layer: 6
-  m_Name: Monster1
+  m_Name: Monster
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,7 +184,7 @@ Animator:
   m_GameObject: {fileID: 2601847428194130365}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f2855d618fc8d9c499189d3f39b9cbbc, type: 2}
+  m_Controller: {fileID: 22100000, guid: 25f7a818644b68042bb0c0c2a28d1550, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -253,7 +253,6 @@ MonoBehaviour:
   - {fileID: 22100000, guid: 12cfc8b2360c2fc4499d4f6f6607671a, type: 2}
   - {fileID: 22100000, guid: 8d1d920724ffb8a409ce0e458dc4b7a9, type: 2}
   - {fileID: 22100000, guid: 25f7a818644b68042bb0c0c2a28d1550, type: 2}
-  target: {fileID: 0}
 --- !u!114 &-6989195373771556695
 MonoBehaviour:
   m_ObjectHideFlags: 0
