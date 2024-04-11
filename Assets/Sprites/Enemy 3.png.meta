@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3bcb7877229a5334da528f2f0872b5c3
+guid: d33598d781682e049a53a0a13104ef29
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -127,6 +125,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -145,8 +155,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71e8e4bb43c7e9645996bb008c7aa3a1
-      internalID: -493647738
+      spriteID: 49e0d998d75f8ce4ebd09abf6bd66ffc
+      internalID: 1782705385
       vertices: []
       indices: 
       edges: []
@@ -166,8 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d932525b42506a74f853ac8ea6e6fa46
-      internalID: 1354593876
+      spriteID: cf4c546e2c684434e9e0390bd559b021
+      internalID: 1544975445
       vertices: []
       indices: 
       edges: []
@@ -187,8 +197,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c0910be5dfd49645af2d578a768ae88
-      internalID: 2018998915
+      spriteID: 0e0341f44abdd8c43bc9d05a941f084c
+      internalID: 33490002
       vertices: []
       indices: 
       edges: []
@@ -208,8 +218,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93a77766471a63e47b56113a4ff2c0dd
-      internalID: 66914582
+      spriteID: 25aa096b86708b446a57d3b7ae56aeba
+      internalID: 877188646
       vertices: []
       indices: 
       edges: []
@@ -229,8 +239,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f224379d0e1bc184b9cc06eb4fb07a87
-      internalID: 1243161592
+      spriteID: f1b10f110db351148b317f5dfa6d00d5
+      internalID: 393441404
       vertices: []
       indices: 
       edges: []
@@ -250,8 +260,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f9f2b4261b2992438ba482e8da2148e
-      internalID: -1524729577
+      spriteID: 8c1ff8907ace5c04481f034ee6e7fde8
+      internalID: -595425931
       vertices: []
       indices: 
       edges: []
@@ -271,8 +281,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1164659322e642b498043af623ba7501
-      internalID: 194153472
+      spriteID: 0f684ba64ddbbbb43baaa64b83e0ebdf
+      internalID: -1523209149
       vertices: []
       indices: 
       edges: []
@@ -292,8 +302,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc5bca745a373c340b740dd1b4e3f6e3
-      internalID: -2007313318
+      spriteID: 1a9272f930e58ce4680cb9db7cca1a19
+      internalID: 1253841367
       vertices: []
       indices: 
       edges: []
@@ -309,16 +319,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Run 0: -493647738
-      Run 5: -1524729577
-      Run 2: 2018998915
-      Run 3: 66914582
-      Hit: 194153472
-      Run 4: 1243161592
-      Run 1: 1354593876
-      Dead: -2007313318
-  mipmapLimitGroupName: 
+      Dead: 1253841367
+      Hit: -1523209149
+      Run 0: 1782705385
+      Run 1: 1544975445
+      Run 2: 33490002
+      Run 3: 877188646
+      Run 4: 393441404
+      Run 5: -595425931
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     private float speed = 5f;
     public Vector2 inputVector;
-
+    public Scanner scanner;
     private SpriteRenderer spriteRenderer;
     private Animator anim;
 
@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();    
         anim = GetComponent<Animator>();
+        scanner = GetComponent<Scanner>();
     }
 
     void OnMove(InputValue value)
