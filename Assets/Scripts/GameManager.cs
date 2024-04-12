@@ -7,10 +7,13 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("# Game Control")]
+    public bool isLive;
     public float gameTime;
     public float maxGameTime = 5 * 60f;
 
     [Header("# Player Info")]
+    public int curHp;
+    public int maxHp;
     public int level;
     public int kill;
     public int exp;
@@ -22,6 +25,7 @@ public class GameManager : MonoBehaviour
     //public MonsterData monsterData;
     public PoolManager pool;
     public PlayerController controller;
+    public LevelUp uiLevelUp;
     
 
     private void Awake()
@@ -29,8 +33,17 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        curHp = maxHp;
+
+        uiLevelUp.Select(0);
+    }
+
     private void Update()
     {
+        if (!isLive) return;
+
         gameTime += Time.deltaTime;
 
         if(gameTime> maxGameTime)
@@ -43,11 +56,23 @@ public class GameManager : MonoBehaviour
     {
         exp++;
 
-        if(exp == nextExp[level])
+        if(exp == nextExp[Mathf.Min(level, nextExp.Length-1)])
         {
             level++;
             exp = 0;
-
+            uiLevelUp.Show();
         }
+    }
+
+    public void Stop()
+    {
+        isLive = false;
+        Time.timeScale = 0;
+    }
+
+    public void Resume()
+    {
+        isLive = true;
+        Time.timeScale = 1;
     }
 }

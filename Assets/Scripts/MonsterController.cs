@@ -35,6 +35,8 @@ public class MonsterController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!GameManager.Instance.isLive) return;
+
         if (!isLive || animator.GetCurrentAnimatorStateInfo(0).IsName("Hit")) return;
 
         Vector2 dirVector = target.position - rigid.position; 
@@ -45,6 +47,8 @@ public class MonsterController : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (!GameManager.Instance.isLive) return;
+
         if (!isLive) return;
 
         spriteRenderer.flipX = target.position.x < transform.position.x;
